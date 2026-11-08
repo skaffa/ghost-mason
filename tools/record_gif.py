@@ -71,14 +71,14 @@ def main():
         box = client_box(hwnd)
         frame = ImageGrab.grab(bbox=box, all_screens=True)
         height = round(frame.height * args.width / frame.width)
-        frames.append(frame.resize((args.width, height), Image.LANCZOS))
+        small = frame.resize((args.width, height), Image.LANCZOS)
+        # Reduce to 256 colours right away: a palette frame takes a third of the memory.
+        frames.append(small.quantize(colors=255, method=Image.Quantize.FASTOCTREE, dither=Image.Dither.NONE))
         next_shot += interval
         time.sleep(max(0, next_shot - time.time()))
 
     print(f"Captured {len(frames)} frames, encoding...", flush=True)
-    # One shared palette keeps colours stable between frames and the file small.
-    palette_source = frames[len(frames) // 2].quantize(colors=255, method=Image.Quantize.MEDIANCUT)
-    gif_frames = [f.quantize(palette=palette_source, dither=Image.Dither.NONE) for f in frames]
+    gif_frames = frames
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     gif_frames[0].save(args.out, save_all=True, append_images=gif_frames[1:], loop=0,
                        duration=round(1000 * interval / args.speed), optimize=True, disposal=1)
