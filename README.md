@@ -5,8 +5,7 @@
 <p align="center"><b>Describe a build. An AI architect designs it in your world as ghost blocks.</b><br>
 Build along the ghosts by hand in survival, or place the whole thing in creative.</p>
 
-<!-- Replace with the demo GIF: media/demo.gif -->
-<p align="center"><img src="media/demo.gif" width="720" alt="Ghost Mason designing a cottage"></p>
+<p align="center"><img src="media/demo.gif" width="720" alt="Ghost Mason designing a fountain"></p>
 
 ---
 
