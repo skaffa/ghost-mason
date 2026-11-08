@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "ghostmason",
+	"version": "${version}",
+	"name": "Ghost Mason",
+	"description": "Describe a build and an AI architect (Claude or DeepSeek) designs it in your world as see-through ghost blocks. Build along them by hand, or place them in creative.",
+	"authors": [
+		"Skaffa",
+		"Claude (Anthropic)"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/ghost-mason",
+		"sources": "https://github.com/skaffa/ghost-mason",
+		"issues": "https://github.com/skaffa/ghost-mason/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/ghostmason/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.ghostmason.GhostMason"
+		],
+		"client": [
+			"dev.ghostmason.client.GhostMasonClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"worldedit": "*"
+	}
+}
