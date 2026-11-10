@@ -71,17 +71,17 @@ Everything is under `/gm`, so nothing clashes with other mods.
 | `maxghosts` / `ghostdistance` | How many ghosts are drawn, and how far away | `4000` / `48` |
 | `worldedit` | Use your WorldEdit selection | `off` |
 
-**Your own instructions:** anything you want the AI to always keep in mind (a favourite style, materials, "always light the inside") goes in `config/ghostmason-prompt.txt`. It is read for every request, so changes apply right away.
+**Your own instructions:** anything you want the AI to always keep in mind (a favourite style, materials, "always light the inside") goes in `config/ghostmason/prompt.txt`. It is read for every request, so changes apply right away.
 
 ## Servers
 
 Ghost Mason is mainly a client mod. Without it on the server you can still design and build along the ghosts by hand; only `/gm apply`, `/gm undo` and `/gm redo` need it on the server too.
 
-Server owners can limit placement in `config/ghostmason-server.json`: who may place (`op`, `creative`, `nobody`, or `auto`: creative in singleplayer, op on dedicated servers), the most blocks per apply (20000), a cooldown between placements (10 s, operators exempt), the maximum distance (256) and the undo depth (10). Containers are never overwritten unless the player uses `/gm apply replace`, and then their contents drop as items.
+Server owners can limit placement in `config/ghostmason/server.json`: who may place (`op`, `creative`, `nobody`, or `auto`: creative in singleplayer, op on dedicated servers), the most blocks per apply (20000), a cooldown between placements (10 s, operators exempt), the maximum distance (256) and the undo depth (10). Containers are never overwritten unless the player uses `/gm apply replace`, and then their contents drop as items.
 
 ## Privacy and costs
 
-- Your API key is stored in `config/ghostmason.json` on your computer and is only sent to the AI provider you picked.
+- Your API key is stored in `config/ghostmason/client.json` on your computer and is only sent to the AI provider you picked.
 - Each request sends the blocks inside your selection and your description to that provider. Nothing else from your world or computer is sent.
 - The connect page runs inside Minecraft on `127.0.0.1` and is only reachable from your own computer.
 - AI usage is billed by the provider to your account. Larger selections cost more.

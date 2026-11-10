@@ -1,6 +1,7 @@
 package dev.ghostmason.server;
 
 import dev.ghostmason.GhostMason;
+import dev.ghostmason.core.ConfigFiles;
 import dev.ghostmason.net.ApplyChunkPayload;
 import dev.ghostmason.net.HistoryPayload;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
@@ -14,7 +15,6 @@ import net.minecraft.server.permissions.Permissions;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.nio.file.Path;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -45,8 +45,8 @@ public final class ServerPlacer {
 	private ServerPlacer() {
 	}
 
-	public static void onServerStarting(MinecraftServer server, Path configDir) {
-		config = ServerConfig.load(configDir.resolve("ghostmason-server.json"));
+	public static void onServerStarting(MinecraftServer server) {
+		config = ServerConfig.load(ConfigFiles.file(ConfigFiles.SERVER, "ghostmason-server.json"));
 		dedicated = server.isDedicatedServer();
 		PENDING.clear();
 		HISTORY.clear();

@@ -1,9 +1,9 @@
 package dev.ghostmason.client;
 
+import dev.ghostmason.core.ConfigFiles;
 import dev.ghostmason.core.GhostMasonConfig;
 import dev.ghostmason.core.RegionSnapshot;
 import dev.ghostmason.core.ai.ChatMessage;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.BlockPos;
 
 import java.nio.file.Path;
@@ -16,7 +16,8 @@ import java.util.concurrent.ScheduledExecutorService;
 
 /** Client-side state for the current selection and plan. Touch only from the client thread. */
 final class Session {
-	static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("ghostmason.json");
+	static final Path CONFIG_PATH = ConfigFiles.file(ConfigFiles.CLIENT, "ghostmason.json");
+	static final Path PROMPT_PATH = ConfigFiles.file(ConfigFiles.PROMPT, "ghostmason-prompt.txt");
 	static GhostMasonConfig config = GhostMasonConfig.load(CONFIG_PATH);
 
 	static BlockPos pos1;

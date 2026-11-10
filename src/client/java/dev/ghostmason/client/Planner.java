@@ -152,7 +152,7 @@ final class Planner {
 
 		String system = PromptBuilder.systemPrompt(minecraftVersion(),
 				Session.config.blockReference ? BlockReference.text() : "",
-				dev.ghostmason.core.CustomPrompt.load(Session.CONFIG_PATH.resolveSibling("ghostmason-prompt.txt")));
+				dev.ghostmason.core.CustomPrompt.load(Session.PROMPT_PATH));
 		List<ChatMessage> messages = List.copyOf(Session.conversation);
 		RegionSnapshot snapshot = Session.snapshot;
 		int maxChanges = Session.config.maxChanges;

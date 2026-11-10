@@ -16,7 +16,7 @@ public class GhostMasonClient implements ClientModInitializer {
 
 		WorldEditSelection.init();
 		// Create the instructions file with its explanation, so players can find it.
-		dev.ghostmason.core.CustomPrompt.load(Session.CONFIG_PATH.resolveSibling("ghostmason-prompt.txt"));
+		dev.ghostmason.core.CustomPrompt.load(Session.PROMPT_PATH);
 		ClientPlayConnectionEvents.JOIN.register((handler, sender, client) ->
 				client.execute(WorldEditSelection::requestUpdates));
 	}

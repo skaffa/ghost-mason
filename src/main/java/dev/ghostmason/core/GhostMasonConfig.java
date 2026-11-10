@@ -15,7 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Locale;
 
-/** User settings, stored as JSON in config/ghostmason.json. Public fields map 1:1 to JSON keys. */
+/** User settings, stored as JSON in config/ghostmason/client.json. Public fields map 1:1 to JSON keys. */
 public final class GhostMasonConfig {
 	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 

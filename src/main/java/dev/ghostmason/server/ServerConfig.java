@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
- * Server-side limits for /gm apply, in config/ghostmason-server.json. Only matters on the
+ * Server-side limits for /gm apply, in config/ghostmason/server.json. Only matters on the
  * server (or the singleplayer world); the client config is separate.
  */
 public final class ServerConfig {

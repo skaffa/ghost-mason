@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
- * The player's own standing instructions for the AI, kept in config/ghostmason-prompt.txt and
+ * The player's own standing instructions for the AI, kept in config/ghostmason/prompt.txt and
  * edited by hand. Read fresh for every request, so changes apply without restarting.
  */
 public final class CustomPrompt {

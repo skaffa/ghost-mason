@@ -78,15 +78,15 @@ Everything is under `/gm`, so nothing clashes with other mods.
 | `ghostdistance` | How far away ghosts are drawn, in blocks | `48` |
 | `worldedit` | `on`: use your WorldEdit selection (needs WorldEdit or WorldEditCUI) | `off` |
 
-A few more settings live only in `config/ghostmason.json`.
+A few more settings live only in `config/ghostmason/client.json`. All Ghost Mason files live in the `config/ghostmason/` folder; files from 0.1.0 (`config/ghostmason.json`, `ghostmason-prompt.txt`, `ghostmason-server.json`) are moved there automatically on first start.
 
-**Your own instructions:** write anything you want the AI to always keep in mind (a favourite style, materials, "always light the inside") in `config/ghostmason-prompt.txt`. Lines starting with `#` are ignored. It is read for every request, so changes apply right away.
+**Your own instructions:** write anything you want the AI to always keep in mind (a favourite style, materials, "always light the inside") in `config/ghostmason/prompt.txt`. Lines starting with `#` are ignored. It is read for every request, so changes apply right away.
 
 ## Servers
 
 Ghost Mason is mainly a client mod. Without it on the server you can still design and build along the ghosts by hand; only `/gm apply`, `/gm undo` and `/gm redo` need it on the server too.
 
-Server owners can limit placement in `config/ghostmason-server.json`:
+Server owners can limit placement in `config/ghostmason/server.json`:
 
 | Setting | Meaning | Default |
 |---|---|---|
@@ -100,7 +100,7 @@ Containers (chests, furnaces...) in the way are kept by default. With `/gm apply
 
 ## Privacy and costs
 
-- Your API key is stored in `config/ghostmason.json` on your computer and is only sent to the AI provider you picked.
+- Your API key is stored in `config/ghostmason/client.json` on your computer and is only sent to the AI provider you picked.
 - Each request sends the blocks inside your selection and your description to that provider. Nothing else from your world or computer is sent.
 - The connect page runs inside Minecraft on `127.0.0.1` and is only reachable from your own computer.
 - AI usage is billed by the provider to your account. Larger selections cost more.

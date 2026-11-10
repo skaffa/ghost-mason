@@ -148,7 +148,7 @@ final class GmCommands {
 		Msg.info("/gm export [name] - save the design as a .schem file");
 		Msg.info("/gm status - progress and the blocks you still need | /gm clear [plan|selection|all]");
 		Msg.info("/gm config [list|provider|model|effort|maxtokens|verbosity|tokens|placement|review|worldedit|maxvolume|maxghosts|ghostdistance|key|connect|reload] - settings");
-		Msg.info("Standing instructions for the AI: edit config/ghostmason-prompt.txt");
+		Msg.info("Standing instructions for the AI: edit config/ghostmason/prompt.txt");
 		return 1;
 	}
 
@@ -370,10 +370,10 @@ final class GmCommands {
 		return 1;
 	}
 
-	/** Every setting in config/ghostmason.json, with API keys partly hidden. */
+	/** Every setting in config/ghostmason/client.json, with API keys partly hidden. */
 	private static int listConfig() {
 		com.google.gson.JsonObject all = new com.google.gson.Gson().toJsonTree(Session.config).getAsJsonObject();
-		Msg.info("All settings (config/ghostmason.json):");
+		Msg.info("All settings (config/ghostmason/client.json):");
 		for (var entry : all.entrySet()) {
 			String key = entry.getKey();
 			String value = entry.getValue().isJsonPrimitive() ? entry.getValue().getAsString() : entry.getValue().toString();

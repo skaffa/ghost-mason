@@ -21,7 +21,7 @@ public final class PromptBuilder {
 	}
 
 	/**
-	 * @param playerInstructions the player's standing instructions (config/ghostmason-prompt.txt), or ""
+	 * @param playerInstructions the player's standing instructions (config/ghostmason/prompt.txt), or ""
 	 */
 	public static String systemPrompt(String minecraftVersion, String blockReference, String playerInstructions) {
 		StringBuilder sb = new StringBuilder(baseSystemPrompt(minecraftVersion));
