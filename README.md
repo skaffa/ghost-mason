@@ -1,11 +1,11 @@
-<p align="center"><img src="media/icon.png" width="128" alt="Ghost Mason icon"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/skaffa/ghost-mason/6024eb7a8e033a1909b846e71406251c7dda828a/media/icon.png" width="128" alt="Ghost Mason icon"></p>
 
 <h1 align="center">Ghost Mason</h1>
 
 <p align="center"><b>Describe a build. An AI architect designs it in your world as ghost blocks.</b><br>
 Build along the ghosts by hand in survival, or place the whole thing in creative.</p>
 
-<p align="center"><img src="media/demo.gif" width="720" alt="Ghost Mason designing a fountain"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/skaffa/ghost-mason/6024eb7a8e033a1909b846e71406251c7dda828a/media/demo.gif" width="720" alt="Ghost Mason designing a fountain"></p>
 
 ---
 
